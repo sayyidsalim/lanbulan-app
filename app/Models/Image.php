@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Image extends Model
 {
@@ -13,5 +14,9 @@ class Image extends Model
     public function imageable()
     {
         return $this->morphTo();
+    }
+    public function metadata(): MorphOne
+    {
+        return $this->morphOne(Metadata::class, "metadata_table");
     }
 }
