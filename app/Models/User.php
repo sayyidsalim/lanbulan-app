@@ -62,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->morphMany(Image::class, "imageable");
     }
+    public function orders (): HasMany 
+    {
+        return $this->hasMany(Order::class);
+    }
+    
 }
