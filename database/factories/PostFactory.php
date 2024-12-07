@@ -21,7 +21,7 @@ class PostFactory extends Factory
     {
         return [
             //
-            "title"=> fake()->title(),
+            "title"=> fake()->sentence(),
             "content"=> fake()->text(),
             "user_id" => \App\Models\User::factory()
         ];

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,9 +9,7 @@ Route::get('/', function () {
 Route::get("/product", function () {
     return view("pages.products");
 });
-Route::get("/blog", function () {
-    return view("pages.blog");
-});
+Route::resource("/blog", PostController::class);
 
 Route::get("/daftar-santri", function () {
     return view("pages.daftar_online");
@@ -32,7 +31,3 @@ Route::get("/checkout", function () {
 Route::get("/dashboard", function () {
     return view("/pages.dashboard");
 });
-Route::get("/single", function () {
-    return view("/pages.single");
-});
-
