@@ -13,6 +13,10 @@ class Post extends Model
     use HasFactory;
     protected $table = "blogs";
     protected $fillable = ["title", "content", "user_id"];
+    public function author()
+    {
+        return $this->belongsTo(User::class, "user_id");
+    }
     public function images(): MorphMany
     {
         return $this->morphMany(Image::class, "imageable");
